@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/d39799c1b8.js" crossorigin="anonymous"></script>
+    <script defer src="/public/nui/js/bootsrap/tooltips.js"></script>
+    <link rel="stylesheet" href="css/intlTelInput.css">
+</head>
+
+<body>
+    <main class="">
+        <!--Modals-->
+        <div class="modal fade" id="change-username" tabindex="-1" aria-labelledby="change-username" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h7 class="modal-title" id="change-username">Chage Username</h7>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-body-description">Enter your new Username and your Current Password</span>
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" id="input-title" class="col-form-label">USERNAME:</label>
+                                <input type="text" class="form-control" id="input-change-form">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" id="input-title" class="col-form-label">CURRENT
+                                    PASSWORD:</label>
+                                <input class="form-control " type="password" id="input-change-form"></input>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="change-email" tabindex="-1" aria-labelledby="change-email" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h7 class="modal-title" id="change-email">Chage Email</h7>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-body-description">Enter your new Email and your Current Password</span>
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" id="input-title" class="col-form-label">EMAIL:</label>
+                                <input type="text" class="form-control" id="input-change-form">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" id="input-title" class="col-form-label">CURRENT
+                                    PASSWORD:</label>
+                                <input class="form-control " type="password" id="input-change-form"></input>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="change-phone-number" tabindex="-1" aria-labelledby="change-phone-number"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h7 class="modal-title" id="change-phone-number">Enter a Phone Number</h7>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-body-description">You will get a verification code to your Phone Number</span>
+                        <form>
+                            <input type="tel" id="phone" class="input-phone-form">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="delete-phone-number" tabindex="-1" aria-labelledby="delete-phone-number"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h7 class="modal-title" id="change-phone-number">Delete Your Phone Number</h7>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-body-description">Are you sure you want to delete your Phone Number</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="removePhone-btn" class="btn btn-primary"
+                            data-bs-dismiss="modal">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="delete-email" tabindex="-1" aria-labelledby="delete-email" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h7 class="modal-title" id="change-phone-number">Delete Your Email</h7>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="modal-body-description">Are you sure you want to delete your Email</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="removeEmail-btn" class="btn btn-primary"
+                            data-bs-dismiss="modal">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main-Screen-->
+        <section id="main-screen" style="display: block;">
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Leave Room</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are Uou Sure For Leaveing The Room ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary"><a href="index.html"
+                                    id="leave-modal">Yes</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-container row bg-main-custom-200">
+                <header class="chat-header">
+                    <h1><i class="fa-regular fa-comment-dots" style="padding: 0px 10px 0px 7px;"></i>ChatYair</h1>
+                    <a href="index.html" class="btn btn-primary" type="button" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">Leave Room</a>
+                </header>
+                <div class="left-side-rooms col col-sm-3 left-section" style="padding: 0;">
+                    <div class="rooms-side">
+                        <div class="title-Groups">Room Name</div>
+                        <div class="groups-container">
+                            <ul>
+                                <li>
+                                    <span id="room-name"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="user-side">
+                        <div class="title-Groups">Users</div>
+                        <ul id="users">
+
+                        </ul>
+                        <div class="user-footer">
+                            <div class="user-deatils">
+                                <ul class="user-option-list">
+                                    <div class="user-information">
+                                        <li> <img src="./img/kakashi.jpg" id="user-img"></li>
+                                        <li id="username">
+                                            <span id="username">Yair</span>
+                                            <span id="tag">#5872</span>
+                                        </li>
+                                        <li class="settings-icon">
+                                            <div class="voice-settings-option d-flex ">
+                                                <i class="fa-solid fa-microphone"></i>
+                                                <i class="fa-solid fa-headphones"></i>
+                                                <i id="setbtn" class="fa-solid fa-gear"></i>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="chat col">
+                    <div class="chat-messages">
+                    </div>
+                    <div class="chat-form-container">
+                        <form id="chat-form">
+                            <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off">
+                            <button class="labal-send"><i class="fa-solid fa-paper-plane send-icon"></i>Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Settings Page-->
+        <section class="Settings-section bg-main-custom-200" id="settings-screen" style="visibility: hidden;">
+            <div class="settings-categories left-section">
+                <div class="title-categories" style=" 
+                    padding-top: 20px;
+                    padding-bottom: 20px;">
+                    <span>
+                        SETTINGS
+                    </span>
+                </div>
+                <div class="categories-list">
+                    <ul>
+                        <div class="First-categories">
+                            <div class="title">USER SETTINGS</div>
+                            <li id="my-acc-btn">My Account</li>
+                            <li id="fr-btn">Friend Request</li>
+                        </div>
+                        <hr class="line-categories">
+                        <div class="Second-categories">
+                            <div class="title">APP SETTINGS</div>
+                            <li id="appearance-btn">Appearance</li>
+                            <li id="keybind_btn">Keybind</li>
+                            <li id="voice_And_Video-btn">Voice & Video</li>
+                        </div>
+                        <hr class="line-categories">
+                        <div class="logout">
+                            <li><span>Logout</span><i class="fa-solid fa-arrow-right-from-bracket"></i></li>
+                        </div>
+                        <hr class="line-categories">
+                    </ul>
+                </div>
+            </div>
+            <div class="user-dashboard">
+                <div>
+                    <button type="button" class="btn-close-custom"><span>ESC</span></button>
+                </div>
+                <section class="user-settings-section">
+                    <div class="settings-conatiner" id="su" style="display: block;">
+                        <div>
+                            <div class="categories-title-settings">My Account</div>
+                        </div>
+                        <div class="bg-card-custom user-card row">
+                            <div class="user-settings-bg row">
+                                <div class="col-sm-12">
+                                    <span><img src="./img/kakashi.jpg" class="change-img"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="user-info-list">
+                                        <div class="profile-details">
+                                            <li id="username-change">
+                                                <div class="user-details">
+                                                    <span id="name-change">Yair</span>
+                                                    <span id="tag-change">#5872</span>
+                                                </div>
+                                            </li>
+                                        </div>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-primary change-profile-btn" style="margin: auto;
+                                    position: absolute;">Edit User Profile</button>
+                                </div>
+                                <div class="user-details-bg">
+                                    <ul>
+                                        <li>
+                                            <div class="title-details">
+                                                USERNAME
+                                            </div>
+                                            <div class="user-edit-btn-details">
+                                                <span id="details-profile-email">
+                                                    <label class="current-username">Yair#6962</label>
+                                                </span>
+                                                <button style="    position: absolute;
+                                                left: 34rem;" class="btn-edit" data-bs-toggle="modal"
+                                                    data-bs-target="#change-username">Edit</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class=" title-details">
+                                                EMAIL
+                                            </div>
+                                            <div class="user-edit-btn-details">
+                                                <span id="details-profile-email">
+                                                    <label class="current-email">example@gmail.com</label>
+                                                    <button id="reveal-btn-email">Reveal</button>
+                                                </span>
+                                                <button id="remove-btn-email" data-bs-toggle="modal"
+                                                    data-bs-target="#delete-email">Remove</button> <button style="    position: absolute;
+                                                left: 34rem;" class="btn-edit" data-bs-toggle="modal"
+                                                    data-bs-target="#change-email">Edit</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title-details" id="pn-title">
+                                                PHONE NUMBER
+                                            </div>
+                                            <div class="user-edit-btn-details">
+                                                <span id="details-profile-phone">
+                                                    <label class="current-phone">example</label>
+                                                    <button id="reveal-btn-phone">Reveal</button>
+                                                </span>
+                                                <button id="remove-btn-phone" data-bs-toggle="modal"
+                                                    data-bs-target="#delete-phone-number">Remove</button> <button style="    position: absolute;
+                                                left: 34rem;" class="btn-edit" data-bs-toggle="modal"
+                                                    data-bs-target="#change-phone-number">Edit</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="Frist-request-container" id="fr" style="display: none;">
+                        <div class="container-fr">
+                            <div class="categories-title-settings">Friend Request</div>
+                            <span id="description">DECIDED WHO CAN SEND YOU FRIEND REQUEST</span>
+                            <div class="checkboxs">
+                                <ul>
+                                    <li>
+                                        <span>Everyone</span>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round" style="    margin-left: 388px;
+                                            "></span>
+                                        </label>
+                                    </li>
+                                    <hr id="friend-request-line">
+                                    <li>
+                                        <span>Friend Of Your Friends</span>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round" style="    margin-left: 288px;
+                                            "></span>
+                                        </label>
+                                    </li>
+                                    <hr id="friend-request-line">
+                                    <li>
+                                        <span>From Server Members</span>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round" style="    margin-left: 288px;
+                                            "></span>
+                                    </li>
+                                    <hr id="friend-request-line">
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="app-settings-section">
+                    <div class="appearance-container" id="as" style="display: none;">
+                        <div class="container-appearance">
+                            <div class="categories-title-settings">Appearcane</div>
+                            <div class="preview-card">
+                                <img src="./img/Preview.jpg" height="160px" width="470px">
+                            </div>
+                            <div class="theme-section">
+                                <div class="theme-title">Theme</div>
+                                <div class="option-theme-list">
+                                    <ul>
+                                        <li><input type="checkbox" class="checkbox-round" />Dark</li>
+                                        <li><input type="checkbox" class="checkbox-round" />Light</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <hr id="line">
+                            <div class="font-size-section">
+                                <div class="font-size-title">Chat Font Scaling</div>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="100" value="16" class="slider-range" id="myRange"
+                                        oninput="font_size_get_value(this.value)" step="0.01">
+                                    <span id="range-label-font-size" class="value-range">51.5</span>
+
+                                </div>
+                                <div class="font-size-title">Speace Between Message Groups</div>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="100" value="16" class="slider-range" id="myRange"
+                                        oninput="space_message__get_value(this.value)" step="0.01">
+                                    <span id="range-label-space-message" class="value-range-space"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="keybinds-secetion" id="kb" style="display: none;">
+                        <div class="container-keybiinds" style="    display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        align-items: baseline;
+                        justify-content: center;">
+                            <div class="categories-title-settings">Keybinds</div>
+
+                            <div class="add-btn-waring-msg">
+                                <span id="waring-msg">Keybinds are disable while using thie panl</span>
+                                <button id="add-btn" class="btn btn-primary">Add Keybind</button>
+                            </div>
+                            <hr id="line">
+                            <ul class="option-secetion">
+                                <li id="keybind-li-element">
+                                    <div class="d-flex col option-keybind-container">
+                                        <div class="action-option-div" id="flex-column">
+                                            <label for="keybinds-option-title" id="title-action">ACTION</label>
+                                            <select name="keybinds-option" id="keybinds-option">
+                                                <option value="volvo">Toggle Deafen</option>
+                                                <option value="saab">Toggle Mute</option>
+                                                <option value="mercedes">Push To Tallk</option>
+                                                <option value="audi">Toggle Screen Share</option>
+                                            </select>
+                                        </div>
+                                        <div class="chose-option-keybind" id="flex-column">
+                                            <label for="keybinds-option" id="title-action">KEYBIND</label>
+                                            <div class="record-container">
+                                                <input class="key-name" id="key-input-id" placeholder="No Keybind Set"
+                                                    disabled><button class="record-btn">Record</button></input>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-close btn-close-white" aria-label="Close"
+                                            id="close-btn-keybind"></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="voice-video-section container" id="vv" style="display: none;">
+                        <div class="voie-video-container">
+                            <div class="output-inpout">
+                                <div class="output">
+                                    <div class="title" id="voice-title">OUTPUT DEVICE</div>
+                                    <select class="output-select">
+
+                                    </select>
+                                    <div class="title" id="voice-title">INPUT VOLUME</div>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="1" max="100" value="16" class="slider-range"
+                                            id="myRange" oninput="font_size_get_value(this.value)" step="0.01">
+                                    </div>
+                                </div>
+
+                                <div class="input">
+                                    <div class="title" id="voice-title">INPUT DEVICE</div>
+                                    <select class="input-select">
+
+                                    </select>
+                                    <div class="title" id="voice-title">INPUT VOLUME</div>
+                                    <div class="slidecontainer">
+                                        <input type="range" min="1" max="100" value="16" class="slider-range"
+                                            id="myRange" oninput="font_size_get_value(this.value)" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Input-mode" style="margin-top: 20px;">
+                                <div class="title" id="input-mode-title">INPUT MODE</div>
+                                <div>
+                                    <div class="option-theme-list">
+                                        <ul style="align-items: center;" id="input-mode-ul">
+                                            <li><input type="checkbox" class="checkbox-round" />Voice Activity</li>
+                                            <li><input type="checkbox" class="checkbox-round" />Push To Talk</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="push-to-talk-keybind-container">
+                                <div class="record-container-pushToTalk">
+                                    <div style="display: flex;
+                                    align-items: flex-start;
+                                    flex-direction: column;">
+                                        <span class="title">SHORTCUT</span>
+                                        <input class="key-name-PushToTalk" id="puhstotalk-keybinbd-id"
+                                            placeholder="No Keybind Set">
+                                        </input>
+                                    </div>
+                                    <div class="delay">
+                                        <div class="title">PUSH TO TALK RELEASE DELAY</div>
+                                        <input type="range" min="1" max="100" value="16" class="slider-range"
+                                            id="myRange" oninput="font_size_get_value(this.value)" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js"
+        integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script defer src="/js/main.js"></script>
+    <!--Bootsrap5 Import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://npmcdn.com/responsive-headings/responsive-headings.min.css">
+    <script>
+        const settingsBTN = document.getElementById('setbtn').addEventListener('click', changeScreens);
+        const main_screen = document.getElementById('main-screen');
+        const settings_screen = document.getElementById('settings-screen');
+        const close_btn = document.querySelector('.btn-close-custom');
+        close_btn.addEventListener('click', () => {
+            main_screen.style.display = "block"
+            settings_screen.style.visibility = "hidden"
+        });
+
+        function changeScreens() {
+            if (main_screen.style.display == 'block') {
+                settings_screen.style.visibility = 'visible'
+                main_screen.style.display = 'none'
+            }
+        }
+
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="./js/intlTelInput.js"></script>
+<script>$("#phone").intlTelInput();</script>
+<script>
+    function space_message__get_value(myValue) {
+        document.getElementById("range-label-space-message").innerHTML = myValue;
+    }
+</script>
+<script>
+    function font_size_get_value(myValue) {
+        document.getElementById("range-label-font-size").innerHTML = myValue;
+    }
+</script>
+<script src="./js/pages.js" defer></script>
+<script defer src="./js/Keybind.js"></script>
+<script src="./js/UserInfo.js" defer></script>
+<script src="./js/UserAudio.js" defer></script>
+
+
+</html>
